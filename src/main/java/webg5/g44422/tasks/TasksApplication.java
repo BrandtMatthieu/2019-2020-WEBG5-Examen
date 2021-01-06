@@ -1,4 +1,4 @@
-package webg5.tasks;
+package webg5.g44422.tasks;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

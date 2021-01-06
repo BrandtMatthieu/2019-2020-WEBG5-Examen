@@ -1,4 +1,4 @@
-package webg5.tasks.model;
+package webg5.g44422.tasks.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
