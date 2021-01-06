@@ -22,4 +22,8 @@ public class Student {
 	
 	@OneToMany(targetEntity = StudentTask.class, mappedBy = "student")
 	private Collection<StudentTask> tasks;
+
+	public void completeTask(int id) {
+		// TODO complete task
+	}
 }

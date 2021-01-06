@@ -24,7 +24,7 @@
 								<input type="checkbox" th:attr="checked=${$task.done} ? 'true' : 'false'">
 							</td>
 							<td>
-								<form th:if="${!task.done}" action="/students/{studentNumber}/tasks/{id}/(studentNumber = $student.number, id = $task.id)" method="POST">
+								<form th:if="${!task.done}" action="/api/students/{studentNumber}/tasks/{id}/(studentNumber = $student.number, id = $task.id)" method="POST">
 									<input type="submit">
 								</form>
 							</td>
