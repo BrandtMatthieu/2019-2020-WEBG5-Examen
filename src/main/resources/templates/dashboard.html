@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/base.html}">
+	<head>
+		<link rel="stylesheet" th:href="@{/css/home.css}">
+	</head>
+	<body>
+		<main layout:fragment="main">
+			<section>
+				<table>
+					<thead>
+						<tr th:each="task : ${tasks}">
+							<th th:text="${task.id}"></th>
+						</tr>
+					</thead>
+					<tbody th:each="student : ${students}">
+						<tr th:each="task : ${student.tasks}">
+							<td>
+								<a th:href="@{/students/{studentId}/(studentId = ${student.id})}" th:text="${student.name}"></a>
+							</td>
+							<td>
+								<input type="checkbox">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</main>
+	</body>
+</html>
