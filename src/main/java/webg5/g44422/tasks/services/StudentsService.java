@@ -23,4 +23,8 @@ public class StudentsService {
 		return StreamSupport.stream(studentDB.findAll().spliterator(), false).collect(Collectors.toList()); // TODO filter students done
 	}
 
+	public Student getStudentById(int id) {
+		return StreamSupport.stream(studentDB.findAll().spliterator(), false).collect(Collectors.toList()).get(0); // TODO find student by id
+	}
+
 }
