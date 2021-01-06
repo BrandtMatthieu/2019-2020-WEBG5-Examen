@@ -16,7 +16,7 @@
 					<tbody th:each="student : ${students}">
 						<tr th:each="task : ${student.tasks}">
 							<td>
-								<a th:href="@{/students/{studentId}/(studentId = ${student.id})}" th:text="${student.name}"></a>
+								<a th:href="@{/students/{studentNumber}/(studentNumber = ${student.number})}" th:text="${student.name}"></a>
 							</td>
 							<td>
 								<input type="checkbox">

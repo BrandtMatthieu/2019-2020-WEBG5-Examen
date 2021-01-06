@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(path = "/student/", produces = "text/html")
 public class StudentController {
 	
-	@RequestMapping("/{id}/")
+	@RequestMapping("/{number}/")
 	public String student() {
 		return "student";
 	}
