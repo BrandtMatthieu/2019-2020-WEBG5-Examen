@@ -6,20 +6,23 @@
 	</head>
 	<body>
 		<main layout:fragment="main">
+			<h2>Tableau de bord</h2>
 			<section>
 				<table>
 					<thead>
-						<tr th:each="task : ${tasks}">
-							<th th:text="${task.id}"></th>
+						<tr>
+							<th></th>
+							<th th:each="task : ${tasks}" th:text="${task.id}"></th>
 						</tr>
 					</thead>
-					<tbody th:each="student : ${students}">
-						<tr th:each="task : ${student.tasks}">
+					<tbody >
+						<tr th:each="student : ${students}">
 							<td>
 								<a th:href="@{/students/{studentNumber}/(studentNumber = ${student.number})}" th:text="${student.name}"></a>
 							</td>
-							<td>
-								<input type="checkbox">
+							<td th:text="${student}"></td>
+							<td th:each="task : ${student.tasks}">
+								<input type="checkbox" th:attr="checked=${$task.done} ? 'true' : 'false'">
 							</td>
 						</tr>
 					</tbody>

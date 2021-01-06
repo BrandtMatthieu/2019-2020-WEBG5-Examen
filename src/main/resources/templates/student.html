@@ -1,0 +1,36 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/base.html}">
+	<head>
+		<link rel="stylesheet" th:href="@{/css/home.css}">
+	</head>
+	<body>
+		<main layout:fragment="main">
+			<h2>Avancement de <span th:text="${student.name}"></span></h2>
+			<section>
+				<table>
+					<thead>
+						<tr>
+							<th>Tâche</th>
+							<th>Fait ?</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody >
+						<tr th:each="task : ${student.tasks}">
+							<td th:text="${task.description}"></td>
+							<td>
+								<input type="checkbox" th:attr="checked=${$task.done} ? 'true' : 'false'">
+							</td>
+							<td>
+								<form th:if="${!task.done}" action="/students/{studentNumber}/tasks/{id}/(studentNumber = $student.number, id = $task.id)" method="POST">
+									<input type="submit">
+								</form>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</main>
+	</body>
+</html>
